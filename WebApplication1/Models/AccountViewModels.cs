@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
@@ -69,6 +70,10 @@ namespace WebApplication1.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        [Display(Name = "User Name")]
+        [Required(ErrorMessage = "You need to provide a UserName.")]
+        public string UserName { get; set; }
+
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -79,6 +84,39 @@ namespace WebApplication1.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "You need to provide a First Name.")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "You need to provide a Last Name.")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Birth Day")]
+        [Required(ErrorMessage = "You need to provide a Birth Day.")]
+        public DateTime BirthDay { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "You need to provide a Phone Number.")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "Street Address")]
+        [Required(ErrorMessage = "You need to provide an Address.")]
+        public string StreetAddress { get; set; }
+
+        [Display(Name = "City")]
+        [Required(ErrorMessage = "You need to provide a City.")]
+        public string City { get; set; }
+
+        [Display(Name = "State")]
+        [Required(ErrorMessage = "You need to provide a State.")]
+        public string State { get; set; }
+
+        [Display(Name = "Zip")]
+        [Required(ErrorMessage = "You need to provide a Zip Code.")]
+        public int Zip { get; set; }
+
     }
 
     public class ResetPasswordViewModel
