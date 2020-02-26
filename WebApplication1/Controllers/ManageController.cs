@@ -70,7 +70,16 @@ namespace WebApplication1.Controllers
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                Email = UserManager.FindById(userId).Email,
+                UserName = UserManager.FindById(userId).UserName,
+                FirstName = UserManager.FindById(userId).FirstName,
+                LastName = UserManager.FindById(userId).LastName,
+                BirthDay = UserManager.FindById(userId).BirthDay,
+                StreetAddress = UserManager.FindById(userId).StreetAddress,
+                City = UserManager.FindById(userId).City,
+                State = UserManager.FindById(userId).State,
+                Zip = UserManager.FindById(userId).Zip
             };
             return View(model);
         }

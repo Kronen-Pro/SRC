@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCStart.Controllers
 {
+    [Authorize(Roles = "Employee, Manager")]
     public class FormsController : Controller
     {
         // GET: Forms

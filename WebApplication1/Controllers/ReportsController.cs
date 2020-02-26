@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCStart.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class ReportsController : Controller
     {
         // GET: Reports

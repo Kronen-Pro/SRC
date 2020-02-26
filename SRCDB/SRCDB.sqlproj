@@ -81,5 +81,6 @@
   <ItemGroup>
     <None Include="Publish Profiles\SRCDB.publish.xml" />
     <None Include="dbo\Publish Profiles\SRCDB.publish.xml" />
+    <None Include="Publish Profiles\SRCDBredux.publish.xml" />
   </ItemGroup>
 </Project>

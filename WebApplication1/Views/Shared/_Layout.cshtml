@@ -33,7 +33,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     <li>@Html.ActionLink("Assignment1", "Assignment1", "Home")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Services <span class="caret"></span></a>
@@ -51,24 +51,30 @@
                             <li>@Html.ActionLink("Edit", "Edit", "About")</li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Forms <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Membership", "Membership", "Forms")</li>
-                            <li>@Html.ActionLink("Demographics", "Demographics", "Forms")</li>
-                            <li>@Html.ActionLink("Equipment", "Equipment", "Forms")</li>
-                            <li>@Html.ActionLink("Maintenance", "Maintenance", "Forms")</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Reports <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Membership", "Membership", "Reports")</li>
-                            <li>@Html.ActionLink("Demographics", "Demographics", "Reports")</li>
-                            <li>@Html.ActionLink("Equipment", "Equipment", "Reports")</li>
-                            <li>@Html.ActionLink("Maintenance", "Maintenance", "Reports")</li>
-                        </ul>
-                    </li>
+                    @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Forms <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Membership", "Membership", "Forms")</li>
+                                <li>@Html.ActionLink("Demographics", "Demographics", "Forms")</li>
+                                <li>@Html.ActionLink("Equipment", "Equipment", "Forms")</li>
+                                <li>@Html.ActionLink("Maintenance", "Maintenance", "Forms")</li>
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Manager"))
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Reports <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Membership", "Membership", "Reports")</li>
+                                <li>@Html.ActionLink("Demographics", "Demographics", "Reports")</li>
+                                <li>@Html.ActionLink("Equipment", "Equipment", "Reports")</li>
+                                <li>@Html.ActionLink("Maintenance", "Maintenance", "Reports")</li>
+                            </ul>
+                        </li>
+                    }
                     <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Account <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -85,7 +91,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - University of Louisville</p>
         </footer>
     </div>
 
