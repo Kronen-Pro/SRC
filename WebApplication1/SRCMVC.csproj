@@ -327,7 +327,6 @@
     <Content Include="Views\Forms\Demographics.cshtml" />
     <Content Include="Views\Forms\Equipment.cshtml" />
     <Content Include="Views\Forms\Maintenance.cshtml" />
-    <Content Include="Views\Forms\Membership.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
